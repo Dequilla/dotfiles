@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Ensure vim is installed
+sudo apt install -y vim
+
 # Setup folders
 mkdir -p ~/.vim/autoload ~/.vim/plugged ~/.vim/colors
 
