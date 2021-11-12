@@ -41,6 +41,13 @@ set wildmode=list:longest
 set nu
 set numberwidth=4
 
+" Status line format
+set statusline=
+set statusline+=\ %F\ %M\ %Y\ %R
+set statusline+=%=
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+set laststatus=2
+
 " Encoding
 set encoding=utf-8
 
