@@ -43,3 +43,26 @@ set numberwidth=4
 
 " Encoding
 set encoding=utf-8
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+    Plug 'preservim/nerdtree'
+
+call plug#end()
+
+" Map nerdtree to key
+nnoremap <F2> :NERDTreeToggle<cr> 
+
+" Split
+nnoremap sv :vsplit<cr>
+nnoremap sh :split<cr>
+
+" Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
+nnoremap <c-j> <c-wj>
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Colorscheme
+:colorscheme molokai
