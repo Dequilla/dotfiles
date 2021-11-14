@@ -71,5 +71,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Add shortcut for terminal
+nnoremap <c-t> :ter<cr>
+
 " Colorscheme
 :colorscheme molokai
