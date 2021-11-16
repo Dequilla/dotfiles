@@ -20,6 +20,10 @@ set expandtab
 " Better scrolling
 set scrolloff=10
 
+" Show tabs
+set list
+set listchars=tab:>-
+
 " Better search
 set incsearch
 set ignorecase
