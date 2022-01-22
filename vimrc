@@ -61,8 +61,8 @@ call plug#begin('~/.vim/plugged')
     " Nerdtree
     Plug 'preservim/nerdtree'
 
-    " Markdown highlighting
-    Plug 'gabrielelana/vim-markdown'
+    " Highlighting 
+    Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
