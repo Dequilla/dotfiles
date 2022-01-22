@@ -58,7 +58,11 @@ set encoding=utf-8
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+    " Nerdtree
     Plug 'preservim/nerdtree'
+
+    " Markdown highlighting
+    Plug 'gabrielelana/vim-markdown'
 
 call plug#end()
 
