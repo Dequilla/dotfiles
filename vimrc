@@ -64,6 +64,9 @@ call plug#begin('~/.vim/plugged')
     " Highlighting 
     Plug 'sheerun/vim-polyglot'
 
+    " Fuzzy search files and buffer
+    Plug 'ctrlpvim/ctrlp.vim'
+
 call plug#end()
 
 " Map nerdtree to key
@@ -73,8 +76,13 @@ nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap sv :vsplit<cr>
 nnoremap sh :split<cr>
 
+" CtrlP Fuzzy search
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
-nnoremap <c-j> <c-wj>
+nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
