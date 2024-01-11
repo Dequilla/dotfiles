@@ -92,3 +92,8 @@ nnoremap <c-t> :ter<cr>
 
 " Colorscheme
 :colorscheme molokai
+
+:command Build :!./build.sh
+:command Run  :!./run.sh
+nnoremap <c-b> :Build<cr>
+nnoremap <c-r> :Run<cr>
