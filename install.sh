@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Prerequesits
+# fzf (TODO: Test fzf properly)
+sudo apt install bat silversearcher-ag ripgrep
+
 # Ensure vim is installed
 sudo apt install -y vim
 
