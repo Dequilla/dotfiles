@@ -107,7 +107,12 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " Add shortcut for terminal
-nnoremap <c-t> :ter<cr>
+if has("win32")
+    " Backup is powershell
+    nnoremap <c-t> :ter powershell.exe<cr>
+else
+    nnoremap <c-t> :ter<cr>
+endif
 
 " Colorscheme
 :colorscheme molokai
