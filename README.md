@@ -2,7 +2,7 @@
 
 # Install
 ## Linux
-- Run bash script
+`git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x install.sh && ./install.sh`
 
 ## Windows
 - Add to vim directory (neovim: Users/{username}/AppData/Local/nvim/) 
