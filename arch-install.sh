@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prerequesits
-sudo pacman -S --noconfirm bat silversearcher-ag ripgrep
+sudo pacman -S --noconfirm bat the_silver_searcher ripgrep
 
 # Ensure vim is installed
 sudo pacman -S --noconfirm vim
