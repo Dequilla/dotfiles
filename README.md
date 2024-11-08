@@ -7,6 +7,7 @@
 ## Windows
 - Add to vim directory (neovim: Users/{username}/AppData/Local/nvim/) 
 - Follow directory structure and create files according to bash-script
+- Install the-silver-searcher via winget: `winget install "The Silver Searcher"`
 ### Context Menu (right click)
 - Add the following to a .reg file and run to get neovim to right-click menu on Windows.
 ```
