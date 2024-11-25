@@ -123,8 +123,8 @@ endif
 :command Debug :!./build_and_run run debug
 nnoremap <c-b><c-d> :BuildDeb<cr>
 nnoremap <c-b><c-r> :BuildRel<cr>
-nnoremap <c-r><c-d> :Run<cr>
-nnoremap <c-r><c-r> :Debug<cr>
+nnoremap <c-r><c-r> :Run<cr>
+nnoremap <c-r><c-d> :Debug<cr>
 
 " On window to build VisualStudio project
 if has("win32")
