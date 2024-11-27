@@ -56,6 +56,11 @@ set laststatus=2
 " Encoding
 set encoding=utf-8
 
+" Folding
+set foldmethod=syntax
+set foldlevel=5
+set foldclose=all
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
