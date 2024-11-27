@@ -81,6 +81,9 @@ call plug#begin('~/.vim/plugged')
     " Align things for me PLEASE
     Plug 'godlygeek/tabular'
 
+    " Fugitive
+    Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " Set theme of Airline statusline
