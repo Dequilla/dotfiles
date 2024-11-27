@@ -69,7 +69,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+    " Nicer tabline
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
+
+" Set theme of Airline statusline
+let g:airline_theme='powerlineish'
 
 " Map nerdtree to key
 nnoremap <F2> :NERDTreeToggle<cr> 
