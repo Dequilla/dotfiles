@@ -73,6 +73,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    " Align things for me PLEASE
+    Plug 'godlygeek/tabular'
+
 call plug#end()
 
 " Set theme of Airline statusline
@@ -124,14 +127,10 @@ endif
 " Colorscheme
 :colorscheme molokai
 
-:command BuildRel :!./build_and_run build release
-:command BuildDeb :!./build_and_run build debug
-:command Run  :!./build_and_run run release
-:command Debug :!./build_and_run run debug
-nnoremap <c-b><c-d> :BuildDeb<cr>
-nnoremap <c-b><c-r> :BuildRel<cr>
-nnoremap <c-r><c-r> :Run<cr>
-nnoremap <c-r><c-d> :Debug<cr>
+:command Build :!./build.sh
+:command Run  :!./run.sh
+nnoremap <c-b> :Build<cr>
+nnoremap <c-r> :Run<cr>
 
 " On window to build VisualStudio project
 if has("win32")
