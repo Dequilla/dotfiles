@@ -5,9 +5,9 @@
 `git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x install.sh && ./install.sh`
 
 ## Windows
-- Add to vim directory (neovim: Users/{username}/AppData/Local/nvim/) 
-- Follow directory structure and create files according to bash-script
-- Run the `win32-pre-install.bat` script to ensure components are installet.
+`git clone https://github.com/Dequilla/vimconfig.git; cd .\vimconfig\; .\win-install.ps1`
+
+
 ### Context Menu (right click)
 - Add the following to a .reg file and run to get neovim to right-click menu on Windows.
 ```
@@ -37,7 +37,3 @@ Windows Registry Editor Version 5.00
 @="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\" \"%v\""
 ```
 Based on [this](https://gist.github.com/JAffleck/2ba6ca0bd0d5545fd17c396357b9abf0)
-
-
-## For all systems
-- Open vim and run :PlugInstall to install and activate all plugins

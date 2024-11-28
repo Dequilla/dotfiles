@@ -1,3 +1,7 @@
+"""""""""""""""""
+" NeoVim config "
+"""""""""""""""""
+
 " Disable vi compability
 set nocompatible
 
@@ -61,8 +65,10 @@ set foldmethod=syntax
 set foldlevel=5
 set foldclose=all
 
-" Plugins
+" lugins
 call plug#begin('~/.vim/plugged')
+    " Uncomment to check startup timings
+    " Plug 'dstein64/vim-startuptime'
 
     " Nerdtree
     Plug 'preservim/nerdtree'
@@ -83,6 +89,9 @@ call plug#begin('~/.vim/plugged')
 
     " Fugitive
     Plug 'tpope/vim-fugitive'
+
+    " Molokai colorscheme
+    Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -148,3 +157,10 @@ nnoremap <c-r><c-d> :Debug<cr>
 if has("win32")
     :command -nargs=1 BuildVS :!"C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/devenv.exe" <args>.sln /Build "Debug|x64"
 endif
+
+" Open a specific NOTE file that is always in the same locations
+function! OpenPersonalNote()
+    :vsplit '~/notes.md'
+endfunction
+
+:command Note :call OpenPersonalNote()
