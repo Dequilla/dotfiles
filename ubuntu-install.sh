@@ -1,20 +1,22 @@
 #!/bin/bash
 
+CONF_HOME=~/.config
+
 # Prerequesits
-# fzf (TODO: Test fzf properly)
+# fzf 
 sudo apt install bat silversearcher-ag ripgrep
 
 # Ensure vim is installed
-sudo apt install -y vim
+sudo apt install -y neovim
 
 # Setup folders
-mkdir -p ~/.vim/autoload ~/.vim/plugged ~/.vim/colors
-
-# Colorscheme
-curl -o ~/.vim/colors/molokai.vim https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+mkdir -p $CONF_HOME/nvim/autoload $CONF_HOME/nvim/plugged $CONF_HOME/nvim/colors
 
 # Install plugin for handling plugins
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo $CONF_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Copy vimrc to correct location 
-cp ./vimrc ~/.vimrc
+cp -r ./nvim/init.vim $CONF_HOME/nvim/init.vim
+
+# Install plugins
+nvim +'PlugInstall'
