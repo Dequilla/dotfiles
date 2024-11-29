@@ -90,13 +90,24 @@ call plug#begin('~/.vim/plugged')
     " Fugitive
     Plug 'tpope/vim-fugitive'
 
-    " Molokai colorscheme
-    Plug 'tomasr/molokai'
+    " Undotree
+    Plug 'mbbill/undotree'
+
+    """"""""""
+    " Themes "
+    """"""""""
+    " Plug 'nordtheme/vim'
+    " Plug 'morhetz/gruvbox'
+    Plug 'alessandroYorba/alduin'
+    " Plug 'tomasr/molokai'
 
 call plug#end()
 
+" Colorscheme
+:colorscheme alduin
+
 " Set theme of Airline statusline
-let g:airline_theme='powerlineish'
+let g:airline_theme='alduin'
 
 " Map nerdtree to key
 nnoremap <F2> :NERDTreeToggle<cr> 
@@ -141,13 +152,10 @@ else
     nnoremap <c-t> :ter<cr>
 endif
 
-" Colorscheme
-:colorscheme molokai
-
-:command BuildRel :!./build_and_run build release
-:command BuildDeb :!./build_and_run build debug
-:command Run  :!./build_and_run run release
-:command Debug :!./build_and_run run debug
+:command! BuildRel :!./build_and_run build release
+:command! BuildDeb :!./build_and_run build debug
+:command! Run  :!./build_and_run run release
+:command! Debug :!./build_and_run run debug
 nnoremap <c-b><c-d> :BuildDeb<cr>
 nnoremap <c-b><c-r> :BuildRel<cr>
 nnoremap <c-r><c-r> :Run<cr>
@@ -155,12 +163,12 @@ nnoremap <c-r><c-d> :Debug<cr>
 
 " On window to build VisualStudio project
 if has("win32")
-    :command -nargs=1 BuildVS :!"C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/devenv.exe" <args>.sln /Build "Debug|x64"
+    :command! -nargs=1 BuildVS :!"C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/devenv.exe" <args>.sln /Build "Debug|x64"
 endif
 
 " Open a specific NOTE file that is always in the same locations
 function! OpenPersonalNote()
-    :vsplit '~/notes.md'
+    :vsplit ~/notes.md
 endfunction
 
-:command Note :call OpenPersonalNote()
+:command! Note :call OpenPersonalNote()
