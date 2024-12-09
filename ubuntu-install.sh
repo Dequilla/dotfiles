@@ -19,4 +19,4 @@ curl -fLo $CONF_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubuser
 cp -r ./nvim/init.vim $CONF_HOME/nvim/init.vim
 
 # Install plugins
-nvim +'PlugInstall'
+nvim +'PlugInstall' +'qa'

@@ -172,3 +172,31 @@ function! OpenPersonalNote()
 endfunction
 
 :command! Note :call OpenPersonalNote()
+
+function! GenerateDefaultBuildAndRun()
+    if has("win32")
+        :echom "TODO: Generating default build_and_run file is not implemented on windows yet."
+    else
+        let buildScript =<< trim EOF 
+            #!/bin/bash
+            mode=$1
+            target=$2
+            if [ "$mode" = "run" ]; then
+              if [ "$target" = "debug" ]; then
+                  echo "$mode => $target"
+              elif [ "$target" = "release" ]; then
+                  echo "$mode => $target"
+              fi
+            elif [ "$mode" = "build" ]; then
+              if [ "$target" = "debug" ]; then
+                  echo "$mode => $target"
+              elif [ "$target" = "release" ]; then
+                  echo "$mode => $target"
+              fi
+            fi
+        EOF
+        :call writefile(buildScript, "build_and_run") 
+        :! chmod +x "build_and_run"
+    endif
+endfunction
+:command! GenBuildScript :call GenerateDefaultBuildAndRun()
