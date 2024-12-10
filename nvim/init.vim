@@ -177,6 +177,11 @@ function! GenerateDefaultBuildAndRun()
     if has("win32")
         :echom "TODO: Generating default build_and_run file is not implemented on windows yet."
     else
+        if filereadable(expand("build_and_run"))
+            echo "ERROR: build_and_run already exists."
+            return
+        endif
+
         let buildScript =<< trim EOF 
             #!/bin/bash
             mode=$1
