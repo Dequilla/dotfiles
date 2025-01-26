@@ -112,6 +112,9 @@ let g:airline_theme='alduin'
 " Map nerdtree to key
 nnoremap <F2> :NERDTreeToggle<cr> 
 
+" Map undotree
+nnoremap <F5> :UndotreeToggle<CR>
+
 " Splitlet g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
 nnoremap sv :vsplit<cr>
 nnoremap sh :split<cr>
