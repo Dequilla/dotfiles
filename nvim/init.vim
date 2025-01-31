@@ -112,6 +112,9 @@ let g:airline_theme='alduin'
 " Map nerdtree to key
 nnoremap <F2> :NERDTreeToggle<cr> 
 
+" Show hidden files
+let NERDTreeShowHidden=1
+
 " Map undotree
 nnoremap <F5> :UndotreeToggle<CR>
 
@@ -193,28 +196,39 @@ function! GenerateDefaultBuildAndRun(type)
 
     if has("win32")
         echo "Creating build script for windows."
+
+        :let buildCmd = "echo \"Running: %mode% => %target%\""
+        if a:type == "vs"
+            :let buildCmd = "msbuild.exe -maxCpuCount"
+        endif
+
         let buildScript =<< trim EOF1
             echo off
             set mode=%1
             set target=%2
             IF "%mode%"=="run" (
                 IF "%target%"=="debug" (
-                    echo "Running: %mode% => %target%"
+                    ##build_cmd##
                 )
                 IF "%target%"=="release" (
-                    echo "Running: %mode% => %target%"
+                    ##build_cmd##
                 )
             )
             IF "%mode%"=="build" (
                 IF "%target%"=="debug" (
-                    echo "Building: %mode% => %target%"
+                    ##build_cmd##
                 )
                 IF "%target%"=="release" (
-                    echo "Building: %mode% => %target%"
+                    ##build_cmd##
                 ) 
             )
         EOF1
+
+
+        let buildScript = split(substitute(join(buildScript, "\n"), "##build_cmd##", buildCmd, "g"), "\n")
         :call writefile(buildScript, "build_and_run.bat") 
+
+        :echo buildScript
 
         " Add build_and_run to gitignore if it exist
         if filereadable(expand(".gitignore"))

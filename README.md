@@ -1,12 +1,17 @@
 # My vim config
 
 # Install
-## Linux
-`git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x install.sh && ./install.sh`
+## Ubuntu Linux
+`git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x ubuntu-install.sh && ./ubuntu-install.sh`
+
+## Arch Linux
+`git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x arch-install.sh && ./arch-install.sh`
 
 ## Windows
 `git clone https://github.com/Dequilla/vimconfig.git; cd .\vimconfig\; .\win-install.ps1`
 
+For Visual studio build support via MSbuild.exe find and add visual studio binary path to %PATH%.
+Default path: `C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin`
 
 ### Context Menu (right click)
 - Add the following to a .reg file and run to get neovim to right-click menu on Windows.
