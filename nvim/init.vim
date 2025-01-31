@@ -155,10 +155,18 @@ else
     nnoremap <c-t> :ter<cr>
 endif
 
-:command! BuildRel :!./build_and_run build release
-:command! BuildDeb :!./build_and_run build debug
-:command! Run  :!./build_and_run run release
-:command! Debug :!./build_and_run run debug
+if has("win32")
+    :command! BuildRel :!build_and_run.bat build release
+    :command! BuildDeb :!build_and_run.bat build debug
+    :command! Run  :!build_and_run.bat run release
+    :command! Debug :!build_and_run.bat run debug
+else
+    :command! BuildRel :!./build_and_run build release
+    :command! BuildDeb :!./build_and_run build debug
+    :command! Run  :!./build_and_run run release
+    :command! Debug :!./build_and_run run debug
+endif
+
 nnoremap <c-b><c-d> :BuildDeb<cr>
 nnoremap <c-b><c-r> :BuildRel<cr>
 nnoremap <c-r><c-r> :Run<cr>
@@ -176,16 +184,47 @@ endfunction
 
 :command! Note :call OpenPersonalNote()
 
-function! GenerateDefaultBuildAndRun()
-    if has("win32")
-        :echom "TODO: Generating default build_and_run file is not implemented on windows yet."
-    else
-        if filereadable(expand("build_and_run"))
-            echo "ERROR: build_and_run already exists."
-            return
-        endif
+" Type: basic (barebone), vs (visual studio)
+function! GenerateDefaultBuildAndRun(type)
+    if filereadable(expand("build_and_run.bat"))
+        echo "ERROR: build_and_run.bat already exists."
+        return
+    endif
 
-        let buildScript =<< trim EOF 
+    if has("win32")
+        echo "Creating build script for windows."
+        let buildScript =<< trim EOF1
+            echo off
+            set mode=%1
+            set target=%2
+            IF "%mode%"=="run" (
+                IF "%target%"=="debug" (
+                    echo "Running: %mode% => %target%"
+                )
+                IF "%target%"=="release" (
+                    echo "Running: %mode% => %target%"
+                )
+            )
+            IF "%mode%"=="build" (
+                IF "%target%"=="debug" (
+                    echo "Building: %mode% => %target%"
+                )
+                IF "%target%"=="release" (
+                    echo "Building: %mode% => %target%"
+                ) 
+            )
+        EOF1
+        :call writefile(buildScript, "build_and_run.bat") 
+
+        " Add build_and_run to gitignore if it exist
+        if filereadable(expand(".gitignore"))
+            echo "Found .gitignore file, appending build_and_run.bat to it."
+            :! @echo.>>".gitignore" 
+            :! @echo build_and_run.bat>>.gitignore
+        endif
+    else
+        echo "Creating build script for linux."
+        let buildScript =<< trim EOF2
             #!/bin/bash
             mode=$1
             target=$2
@@ -202,9 +241,16 @@ function! GenerateDefaultBuildAndRun()
                   echo "$mode => $target"
               fi
             fi
-        EOF
+        EOF2
         :call writefile(buildScript, "build_and_run") 
         :! chmod +x "build_and_run"
+
+        " Add build_and_run to gitignore if it exist
+        if filereadable(expand(".gitignore"))
+            :! echo "Found .gitignore file, appending build_and_run to it."
+            :! echo -e "build_and_run\n" >> .gitignore
+        endif
     endif
 endfunction
-:command! GenBuildScript :call GenerateDefaultBuildAndRun()
+:command! GenBuildScript :call GenerateDefaultBuildAndRun("basic")
+:command! GenBuildScriptVS :call GenerateDefaultBuildAndRun("vs")
