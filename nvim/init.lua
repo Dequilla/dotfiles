@@ -4,11 +4,11 @@ function map(mode, shortcut, command)
 end
 
 function nmap(shortcut, command)
-    map('n', shortcut, command);
+map('n', shortcut, command);
 end
 
 function imap(shortcut, command)
-    map('i', shortcut, command)
+map('i', shortcut, command)
 end
 
 -- Press ESC in normal mode to remove highlighted words
@@ -74,7 +74,8 @@ vim.cmd([[
 vim.opt.encoding = "utf-8"
 
 -- Folding
-vim.opt.foldmethod=syntax
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel=5
 vim.opt.foldclose=all
 
