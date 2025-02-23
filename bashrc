@@ -28,3 +28,5 @@ PROMPT_COMMAND="run_on_prompt_command"
 export HISTTIMEFORMAT="%F %T  "
 
 alias reload='source ~/.bashrc'
+
+alias ls='ls -al'
