@@ -109,14 +109,14 @@ nmap("<c-h>", "<c-w>h")
 nmap("<c-l>", "<c-w>l")
 
 -- Add shortcut for terminal
-if vim.fn.has("win32") then
+if vim.loop.os_uname().sysname == "Windows" then
     -- Backup is powershell
     nmap("<c-t>", ":ter powershell.exe<cr>")
 else
     nmap("<c-t>", ":ter<cr>")
 end
 
-if vim.fn.has("win32") then
+if vim.loop.os_uname().sysname == "Windows" then
     vim.cmd(":command! BuildRel :!build_and_run.bat build release")
     vim.cmd(":command! BuildDeb :!build_and_run.bat build debug")
     vim.cmd(":command! Run  :!build_and_run.bat run release")
