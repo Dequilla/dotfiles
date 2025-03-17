@@ -2,13 +2,13 @@
 
 # Install
 ## Ubuntu Linux
-`git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x ubuntu-install.sh && ./ubuntu-install.sh`
+`git clone https://github.com/Dequilla/dotfiles.git && cd dotfiles/vim/ && chmod +x ubuntu-install.sh && ./ubuntu-install.sh`
 
 ## Arch Linux
-`git clone https://github.com/Dequilla/vimconfig.git && cd vimconfig/ && chmod +x arch-install.sh && ./arch-install.sh`
+`git clone https://github.com/Dequilla/dotfiles.git && cd dotfiles/vim/ && chmod +x arch-install.sh && ./arch-install.sh`
 
 ## Windows
-`git clone https://github.com/Dequilla/vimconfig.git; cd .\vimconfig\; .\win-install.ps1`
+`git clone https://github.com/Dequilla/dotfiles.git; cd .\dotfiles\vim\; .\win-install.ps1`
 
 For Visual studio build support via MSbuild.exe find and add visual studio binary path to %PATH%.
 Default path: `C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin`
