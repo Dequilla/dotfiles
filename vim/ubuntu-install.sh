@@ -6,8 +6,8 @@ CONF_HOME=~/.config
 # fzf 
 sudo apt install bat silversearcher-ag ripgrep
 
-# Ensure vim is installed
-sudo apt install -y neovim
+# We want nightly to support the features for my plugins
+sudo snap install --edge nvim --classic
 
-# Copy vimrc to correct location 
-cp -r ./nvim/init.lua $CONF_HOME/nvim/init.lua
+# Copy configuration files to correct location 
+cp -r ./nvim/ $CONF_HOME/
