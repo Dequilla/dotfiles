@@ -12,11 +12,18 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest"
 imap("<c-p>", "<c-n>")
 
--- Folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 5
 vim.opt.foldclose = all
+
+-- Same autocommand written with a Lua function instead
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*.cpp", "*.h", "*.c" },
+	callback = function()
+		print("FOLD EXPR")
+		vim.opt.foldmethod = "expr"
+		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+	end,
+})
 
 -- Undotree
 nmap("<F5>", ":UndotreeToggle<CR>")
