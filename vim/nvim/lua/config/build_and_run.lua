@@ -1,8 +1,30 @@
-if vim.loop.os_uname().sysname == "Windows" then
+if vim.fn.has("win32") then
 	vim.cmd(":command! BuildRel :!build_and_run.bat build release")
 	vim.cmd(":command! BuildDeb :!build_and_run.bat build debug")
 	vim.cmd(":command! Run  :!build_and_run.bat run release")
 	vim.cmd(":command! Debug :!build_and_run.bat run debug")
+
+	vim.api.nvim_create_user_command("Msbuild", function(opts)
+		local outfn = function(jobid, data, event)
+			local notification
+			local notify_opts = {
+				keep = false,
+				hide_from_history = true,
+				timeout = false,
+				replace = notification,
+			}
+			for k, v in pairs(data) do
+				notification = vim.notify(v, vim.log.levels.INFO, notify_opts)
+			end
+		end
+
+		local job = vim.fn.jobstart("msbuild -p:Configuration=" .. opts.fargs[1], {
+			-- cwd = "/path/to/working/dir",
+			-- on_exit = some_function,
+			on_stdout = outfn,
+			on_stderr = outfn,
+		})
+	end, { nargs = 1, bang = true })
 else
 	vim.cmd(":command! BuildRel :!./build_and_run build release")
 	vim.cmd(":command! BuildDeb :!./build_and_run build debug")
