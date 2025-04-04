@@ -13,13 +13,12 @@ vim.opt.wildmode = "list:longest"
 imap("<c-p>", "<c-n>")
 
 vim.opt.foldlevel = 5
-vim.opt.foldclose = all
+vim.opt.foldclose = "all"
 
 -- Same autocommand written with a Lua function instead
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	pattern = { "*.cpp", "*.h", "*.c" },
+	pattern = { "*.cpp", "*.h", "*cxx", "*.c", "*.rs", "*.py", "*.sh", "*.glsl", "*.html", "*.css", "*.js" },
 	callback = function()
-		print("FOLD EXPR")
 		vim.opt.foldmethod = "expr"
 		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 	end,

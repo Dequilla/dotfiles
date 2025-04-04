@@ -4,6 +4,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Leader like wtf what keyboard is \ easy to use on
 vim.g.mapleader = ","
 
+-- Add pairs for %
+vim.opt.mps:append("<:>")
+
 -- Detect filetypes
 vim.cmd(":filetype on")
 vim.cmd(":filetype plugin on")
