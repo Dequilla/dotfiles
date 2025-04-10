@@ -75,6 +75,12 @@ nmap("<c-k>", "<c-w>k")
 nmap("<c-h>", "<c-w>h")
 nmap("<c-l>", "<c-w>l")
 
+-- Resize splits
+nmap("<a-h>", "2<c-w><")
+nmap("<a-l>", "2<c-w>>")
+nmap("<a-j>", "2<c-w>+")
+nmap("<a-k>", "2<c-w>-")
+
 -- Add shortcut for terminal
 if vim.loop.os_uname().sysname == "Windows" then
 	-- Backup is powershell
