@@ -19,7 +19,6 @@ if(-not (Test-Path $full_install_path))
 # - Put this file: $HOME\Documents\PowerShell\Profile.ps1
 $profile_file = "Profile.ps1"
 $profile_path = $PROFILE.CurrentUserAllHosts 
-# $profile_path = "$HOME\Documents\PowerShell\Profile.ps1"
 if(-not (Test-Path "$profile_path\$profile_file"))
 {
     New-Item -ItemType File -Path $profile_path -Force

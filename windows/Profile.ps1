@@ -8,6 +8,7 @@ if( PowerShellGet\Get-InstalledModule posh-git )
 
 # Installs for current user -> all hosts:
 # - Put this file: $HOME\Documents\PowerShell\Profile.ps1
+# (Already handle if Install.ps1 is used)
 
 ####################
 # Visual Studio 2022
