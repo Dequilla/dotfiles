@@ -82,10 +82,15 @@ nmap("<a-j>", "2<c-w>+")
 nmap("<a-k>", "2<c-w>-")
 
 -- Add shortcut for terminal
-nmap("<c-t>", ":ter<cr>")
 if vim.fn.has("win32") then
-	vim.opt.shell = "powershell"
-	vim.opt.shellcmdflag = "-command"
-	vim.opt.shellquote = '"'
-	vim.opt.shellxquote = ""
+	-- For bang commands, CMD is used and for :ter we use powershell
+	nmap("<c-t>", ":ter powershell<cr>")
+
+	-- This wasn't for me, since commands were wierder to run with bang, kept as reference
+	-- vim.opt.shell = "powershell"
+	-- vim.opt.shellcmdflag = "-command"
+	-- vim.opt.shellquote = '"'
+	-- vim.opt.shellxquote = ""
+else
+	nmap("<c-t>", ":ter<cr>")
 end
