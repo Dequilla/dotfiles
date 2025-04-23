@@ -82,9 +82,10 @@ nmap("<a-j>", "2<c-w>+")
 nmap("<a-k>", "2<c-w>-")
 
 -- Add shortcut for terminal
-if vim.loop.os_uname().sysname == "Windows" then
-	-- Backup is powershell
-	nmap("<c-t>", ":ter powershell.exe<cr>")
-else
-	nmap("<c-t>", ":ter<cr>")
+nmap("<c-t>", ":ter<cr>")
+if vim.fn.has("win32") then
+	vim.opt.shell = "powershell"
+	vim.opt.shellcmdflag = "-command"
+	vim.opt.shellquote = '"'
+	vim.opt.shellxquote = ""
 end
