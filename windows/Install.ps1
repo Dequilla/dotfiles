@@ -8,6 +8,7 @@ $full_install_path = "$install_path\$install_folder"
 
 ##################################
 # Compiler db generator for Clangd
+echo "Installing Visual Studio compiler DB generator for clangd."
 if(-not (Test-Path $full_install_path))
 {
     New-Item -Path "$install_path" -Name "$install_folder" -ItemType Directory
@@ -17,6 +18,7 @@ if(-not (Test-Path $full_install_path))
 ##################################
 # Installs for current user -> all hosts:
 # - Put this file: $HOME\Documents\PowerShell\Profile.ps1
+echo "Installing Profile.ps1 user file."
 $profile_file = "Profile.ps1"
 $profile_path = $PROFILE.CurrentUserAllHosts 
 if(-not (Test-Path "$profile_path\$profile_file"))
@@ -26,7 +28,26 @@ if(-not (Test-Path "$profile_path\$profile_file"))
 }
 
 ##################################
+# WezTerm config
+echo "Installing WezTerm and it's config."
+if( winget list --exact wez.wezterm )
+{
+    echo "WezTerm is already installed, updating..."
+    winget upgrade wez.wezterm
+}
+else
+{
+    echo "WezTerm needs to be installed, installing..."
+    winget install wez.wezterm
+}
+
+$wez_path_dest = "$env:USERPROFILE\.wezterm.lua"
+$wez_path_src = "$PSScriptRoot\.wezterm.lua"
+Copy-Item -Path "$wez_path_src" -Destination "$wez_path_dest" -Force
+
+##################################
 # Posh git prereq. etc.
+echo "Installing PoshGit for PowerShell."
 if([version]$PSVersionTable.PSVersion -ge [version]5.1)
 {
     $allowed_execution_policy = "Unrestricted RemoteSigned"
