@@ -26,4 +26,32 @@ if($env:PATH -notlike "*$cdbg_path*")
     $env:PATH += ";$cdbg_path"
 }
 
+################################
+# Aliases for useful commands
 
+# Move quickly to develop folder
+function Move-To-Dev { Set-Location -Path "C:\develop" }
+Set-Alias -Name cddev -Value Move-To-Dev
+
+# Generate compiler db for vs project
+function Gen-Compiler-Db($solutiondir) {
+    if($solutiondir -eq "." -or -not $solutiondir)
+    {
+        $solutiondir = Get-Location
+    }
+
+    echo "Searching for solution file in $solutiondir"
+    $solutionfile = Get-ChildItem "$solutiondir\*.sln"
+    if($solutionfile)
+    {
+        echo "Found solution file $solutionfile"
+        echo "This takes some time, grab some coffee and relax..."
+        powershell $cdbg_path\clang-build.ps1 -export-jsondb -aSolutionsPath $solutionfile
+    }
+    else
+    {
+        echo "No solution file found in $solutiondir"
+        
+    }
+}
+Set-Alias -Name gencdb -Value Gen-Compiler-Db
