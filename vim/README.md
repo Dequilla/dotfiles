@@ -1,5 +1,8 @@
 # My vim config
 
+## Snippets
+For more snippet syntax, variables and usage: https://code.visualstudio.com/docs/editing/userdefinedsnippets#_snippet-syntax
+
 # Install
 ## Ubuntu Linux
 `git clone https://github.com/Dequilla/dotfiles.git && cd dotfiles/vim/ && chmod +x ubuntu-install.sh && ./ubuntu-install.sh`

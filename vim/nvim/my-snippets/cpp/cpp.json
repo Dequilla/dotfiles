@@ -1,0 +1,51 @@
+{
+    "nodiscard": {
+        "prefix": "[[nodiscard]]",
+        "body": [
+            "[[nodiscard]] $0"
+        ],
+        "description": "No discard attribute"
+    },
+    "deprecated": {
+        "prefix": "[[deprecated]]",
+        "body": [
+            "[[deprecated(\"$1\")]] $0"
+        ],
+        "description": "Deprecated attribute"
+    },
+    "maybe_unused": {
+        "prefix": "[[maybe_unused]]",
+        "body": [
+            "[[maybe_unused]] $0"
+        ],
+        "description": "Maybe unused attribute"
+    },
+    "fallthrough": {
+        "prefix": "[[fallthrough]]",
+        "body": [
+            "[[fallthrough]] $0"
+        ],
+        "description": "Fallthrough case attribute"
+    },
+    "likely": {
+        "prefix": "[[likely]]",
+        "body": [
+            "[[likely]] $0"
+        ],
+        "description": "Likely attribute"
+    },
+    "unlikely": {
+        "prefix": "[[unlikely]]",
+        "body": [
+            "[[unlikely]] $0"
+        ],
+        "description": "Unlikely attribute"
+    },
+    "namespace-attribute": {
+        "prefix": "[[nsa",
+        "body": [
+            "[[ using $1: $2 ]] $0"
+        ],
+        "description": "Namespace bound attribute speicifier"
+    }
+}

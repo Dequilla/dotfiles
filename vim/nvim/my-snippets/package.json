@@ -1,0 +1,28 @@
+{
+    "name": "snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "plaintext",
+                    "markdown",
+                    "html",
+                    "global",
+                    "all"
+                ],
+                "path": "./global.json"
+            },
+            {
+                "language": "gitcommit",
+                "path": "./gitcommit.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./cpp/cpp.json"
+            } 
+        ]
+    }
+}
