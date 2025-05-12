@@ -72,3 +72,8 @@ if([version]$PSVersionTable.PSVersion -ge [version]5.1)
         echo "More information: https://github.com/dahlbyk/posh-git?tab=readme-ov-file#prerequisites"
     }
 }
+
+####################
+# Git
+echo "Setting git default editor to NeoVim..."
+git config --global core.editor "nvim"
