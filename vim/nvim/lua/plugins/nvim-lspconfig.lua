@@ -177,8 +177,9 @@ return {
 				cmd = {
 					"clangd",
 					"--header-insertion=never",
-					"-j=1",
-					"--log=verbose",
+					-- For logging (verbose logging + parse one file at a time)
+					-- "-j=1",
+					-- "--log=verbose",
 				},
 			},
 			-- pyright = {},
