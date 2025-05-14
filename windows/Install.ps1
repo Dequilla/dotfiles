@@ -83,5 +83,9 @@ git config --global core.editor "nvim"
 winget install JanDeDobbeleer.OhMyPosh -s winget
 
 ################
+# Terminal Icons
+PowerShellGet\Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
+
+################
 # Reload profile
 . "$profile_path"

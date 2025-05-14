@@ -65,6 +65,10 @@ Set-Alias -Name gencdb -Value Gen-Compiler-Db
 # Better tab completion (more unix-like)
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
+#####################
+# Terminal Icons
+Import-Module -Name Terminal-Icons
+
 #############################
 # Oh-my-posh (has to be last)
 if( winget list --exact wez.wezterm )
