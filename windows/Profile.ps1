@@ -74,5 +74,5 @@ Import-Module -Name Terminal-Icons
 if( winget list --exact wez.wezterm )
 {
     $env:Path += ";C:\Users\user\AppData\Local\Programs\oh-my-posh\bin"
-    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/hul10.omp.json" | Invoke-Expression
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/stelbent-compact.minimal.omp.json" | Invoke-Expression
 }
