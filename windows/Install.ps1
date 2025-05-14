@@ -45,34 +45,6 @@ $wez_path_dest = "$env:USERPROFILE\.wezterm.lua"
 $wez_path_src = "$PSScriptRoot\.wezterm.lua"
 Copy-Item -Path "$wez_path_src" -Destination "$wez_path_dest" -Force
 
-##################################
-# Posh git prereq. etc.
-echo "Installing PoshGit for PowerShell."
-if([version]$PSVersionTable.PSVersion -ge [version]5.1)
-{
-    $allowed_execution_policy = "Unrestricted RemoteSigned"
-    $ep = Get-ExecutionPolicy
-    if("$allowed_execution_policy" -like "*$ep*") 
-    {
-
-        if( -not (PowerShellGet\Get-InstalledModule -Name posh-git) | Out-Null )
-        {
-            echo "Installing posh git..."
-            PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
-        }
-        else
-        {
-            echo "Updating posh git..."
-            PowerShellGet\Update-Module posh-git 
-        }
-    }
-    else
-    {
-        echo "Posh git will not install, requires execution policy to be set to 'Unrestricted' or 'RemoteSigned'"
-        echo "More information: https://github.com/dahlbyk/posh-git?tab=readme-ov-file#prerequisites"
-    }
-}
-
 ####################
 # Git
 echo "Setting git default editor to NeoVim..."

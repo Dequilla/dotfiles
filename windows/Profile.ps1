@@ -1,11 +1,5 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-if( PowerShellGet\Get-InstalledModule posh-git )
-{
-    echo "Loading posh-git..."
-    Import-Module posh-git
-}
-
 # Installs for current user -> all hosts:
 #   - Put this file: $HOME\Documents\PowerShell\Profile.ps1
 #   (Already handle if Install.ps1 is used)

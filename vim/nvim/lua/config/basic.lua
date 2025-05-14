@@ -87,10 +87,10 @@ if vim.fn.has("win32") then
 	nmap("<c-t>", ":ter powershell<cr>")
 
 	-- This wasn't for me, since commands were wierder to run with bang, kept as reference
-	-- vim.opt.shell = "powershell"
-	-- vim.opt.shellcmdflag = "-command"
+	vim.opt.shell = "powershell"
+	vim.opt.shellcmdflag = "-command"
 	-- vim.opt.shellquote = '"'
-	-- vim.opt.shellxquote = ""
+	vim.opt.shellxquote = ""
 else
 	nmap("<c-t>", ":ter<cr>")
 end
