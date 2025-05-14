@@ -15,9 +15,9 @@ if(-not (Test-Path $full_install_path))
     Copy-Item -Path "$PSScriptRoot\compiler-db-generator" -Recurse -Destination "$full_install_path" -Container
 }
 
-##################################
+#########################################
 # Installs for current user -> all hosts:
-# - Put this file: $HOME\Documents\PowerShell\Profile.ps1
+#   - Put this file at current-user->Profile.ps1
 echo "Installing Profile.ps1 user file."
 $profile_file = "Profile.ps1"
 $profile_path = $PROFILE.CurrentUserAllHosts 
@@ -77,3 +77,11 @@ if([version]$PSVersionTable.PSVersion -ge [version]5.1)
 # Git
 echo "Setting git default editor to NeoVim..."
 git config --global core.editor "nvim"
+
+##########################
+# Oh-my-posh
+winget install JanDeDobbeleer.OhMyPosh -s winget
+
+################
+# Reload profile
+. "$profile_path"
