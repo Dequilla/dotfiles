@@ -16,6 +16,11 @@ if(-not (Test-Path $full_install_path))
 }
 
 #########################################
+# Install PowerShell 7 for speed
+echo "Installing PowerShell 7..."
+winget install Microsoft.PowerShell
+
+#########################################
 # Installs for current user -> all hosts:
 #   - Put this file at current-user->Profile.ps1
 echo "Installing Profile.ps1 user file."

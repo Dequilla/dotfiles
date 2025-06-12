@@ -10,7 +10,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "s3r0 modified (terminal.sexy)"
 
 -- Spawn a fish shell in login mode
-config.default_prog = { "powershell" }
+config.default_prog = { "pwsh" }
 
 -- Usually work in C:\develop
 config.default_cwd = "C:/develop"

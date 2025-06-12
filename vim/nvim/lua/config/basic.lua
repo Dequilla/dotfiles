@@ -46,6 +46,13 @@ vim.opt.history = 100
 vim.opt.nu = true
 vim.opt.numberwidth = 4
 
+-- Line-endings
+if vim.fn.has("win32") then
+	vim.opt.fileformat = "dos"
+else
+	vim.opt.fileformat = "unix"
+end
+
 -- Status line format
 vim.cmd([[
 	set statusline=""
@@ -83,11 +90,11 @@ nmap("<a-k>", "2<c-w>-")
 
 -- Add shortcut for terminal
 if vim.fn.has("win32") then
-	-- For bang commands, CMD is used and for :ter we use powershell
-	nmap("<c-t>", ":ter powershell<cr>")
+	-- For bang commands, CMD is used and for :ter we use powershell 7
+	nmap("<c-t>", ":ter pwsh<cr>")
 
 	-- This wasn't for me, since commands were wierder to run with bang, kept as reference
-	vim.opt.shell = "powershell"
+	vim.opt.shell = "pwsh"
 	vim.opt.shellcmdflag = "-command"
 	-- vim.opt.shellquote = '"'
 	vim.opt.shellxquote = ""
