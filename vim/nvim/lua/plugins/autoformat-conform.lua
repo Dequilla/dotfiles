@@ -18,7 +18,7 @@ return { -- Autoformat
 			-- Disable "format_on_save lsp_fallback" for languages that don't
 			-- have a well standardized coding style. You can add additional
 			-- languages here or re-enable it for the disabled ones.
-			local disable_filetypes = { c = true, cpp = true }
+			local disable_filetypes = { c = false, cpp = false }
 			local lsp_format_opt
 			if disable_filetypes[vim.bo[bufnr].filetype] then
 				lsp_format_opt = "never"
@@ -30,8 +30,33 @@ return { -- Autoformat
 				lsp_format = lsp_format_opt,
 			}
 		end,
+		formatters = {
+			astyle = {
+				prepend_args = {
+					"--style=allman",
+					"--mode=c",
+					"--indent=force-tab",
+					"--break-closing-braces",
+					"--unpad-paren",
+					"--pad-brackets-in",
+					"--pad-include",
+					"--pad-oper",
+					"--pad-paren-in",
+					"--squeeze-lines=2",
+					"--squeeze-ws",
+					"--align-pointer=name",
+					"--align-reference=name",
+					"--indent-namespaces",
+					"--indent-switches",
+					"--indent-preproc-block",
+					"--indent-preproc-define",
+				},
+				inherit = true,
+			},
+		},
 		formatters_by_ft = {
 			lua = { "stylua" },
+			cpp = { "astyle" },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			--
