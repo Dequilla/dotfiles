@@ -1,0 +1,24 @@
+Windows Registry Editor Version 5.00
+
+;; Neovim in WezTerm
+
+[HKEY_CLASSES_ROOT\*\shell\nvim]
+@="Edit with Neovim"
+"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\""
+
+[HKEY_CLASSES_ROOT\*\shell\nvim\command]
+@="\"C:\\Program Files\\WezTerm\\wezterm-gui.exe\" start nvim.exe \"+:au BufReadPost * ++once cd %%:p:h\" \"+:e %1\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\nvim]
+@="Open with Neovim"
+"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\nvim\command]
+@="\"C:\\Program Files\\WezTerm\\wezterm-gui.exe\" start nvim.exe \"%1\" \"+:au VimEnter * ++once cd %1\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\nvim]
+@="Open Neovim here"
+"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\nvim\command]
+@="\"C:\\Program Files\\WezTerm\\wezterm-gui.exe\" start nvim.exe \"%v\" \"+:au VimEnter * ++once cd %v\""
