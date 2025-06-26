@@ -123,6 +123,7 @@ return {
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 					end, "[T]oggle Inlay [H]ints")
 				end
+				vim.lsp.inlay_hint.enable(true, nil)
 			end,
 		})
 
@@ -177,9 +178,11 @@ return {
 				cmd = {
 					"clangd",
 					"--header-insertion=never",
+					"--inlay-hints=true",
+					"--clang-tidy",
 					-- For logging (verbose logging + parse one file at a time)
 					-- "-j=1",
-					-- "--log=verbose",
+					"--log=verbose",
 				},
 			},
 			-- pyright = {},
