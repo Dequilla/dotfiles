@@ -38,7 +38,6 @@ return { -- Autoformat
 					"--indent=force-tab",
 					"--break-closing-braces",
 					"--unpad-paren",
-					"--pad-brackets-in",
 					"--pad-include",
 					"--pad-oper",
 					"--pad-paren-in",
