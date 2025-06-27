@@ -45,7 +45,7 @@ function Gen-Compiler-Db($solutiondir) {
     {
         echo "Found solution file $solutionfile"
         echo "This takes some time, grab some coffee and relax..."
-        powershell $cdbg_path\clang-build.ps1 -export-jsondb -aSolutionsPath $solutionfile
+        powershell $cdbg_path\clang-build.ps1 -export-jsondb -aSolutionsPath $solutionfile -aVisualStudioVersion 2022
     }
     else
     {
