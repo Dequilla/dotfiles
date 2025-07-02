@@ -42,6 +42,7 @@ return { -- Autoformat
 					"--indent-switches",
 					"--indent-preproc-block",
 					"--indent-preproc-define",
+					"--pad-fcc",
 				},
 				inherit = true,
 			},
