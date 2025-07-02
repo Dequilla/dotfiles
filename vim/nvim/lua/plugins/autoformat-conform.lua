@@ -39,7 +39,6 @@ return { -- Autoformat
 					"--break-closing-braces",
 					"--pad-include",
 					"--pad-comma",
-					"--indent-namespaces",
 					"--indent-switches",
 					"--indent-preproc-block",
 					"--indent-preproc-define",
