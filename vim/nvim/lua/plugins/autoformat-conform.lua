@@ -34,7 +34,6 @@ return { -- Autoformat
 			astyle = {
 				prepend_args = {
 					"--style=allman",
-					"--mode=c",
 					"--indent=force-tab",
 					"--break-closing-braces",
 					"--pad-include",
@@ -43,8 +42,10 @@ return { -- Autoformat
 					"--indent-preproc-block",
 					"--indent-preproc-define",
 					"--pad-fcc",
+					"--mode=c",
 				},
 				inherit = true,
+				command = "AStyle31.exe",
 			},
 		},
 		formatters_by_ft = {
