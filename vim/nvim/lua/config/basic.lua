@@ -7,8 +7,7 @@ vim.g.mapleader = ","
 -- Add pairs for %
 vim.opt.mps:append("<:>")
 
--- Detect filetypes
-vim.cmd(":filetype on")
+-- Detect filetypes vim.cmd(":filetype on")
 vim.cmd(":filetype plugin on")
 vim.cmd(":filetype indent on")
 
@@ -93,7 +92,7 @@ nmap("<a-j>", "2<c-w>+")
 nmap("<a-k>", "2<c-w>-")
 
 -- Add shortcut for terminal
-if vim.fn.has("win32") then
+if vim.fn.has("win32") == 1 then
 	-- For bang commands, CMD is used and for :ter we use powershell 7
 	nmap("<c-t>", ":ter pwsh<cr>")
 
