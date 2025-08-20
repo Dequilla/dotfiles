@@ -36,7 +36,6 @@ return { -- Autoformat
 					"--style=allman",
 					"--indent=force-tab",
 					"--break-closing-braces",
-					"--pad-include",
 					"--pad-comma",
 					"--indent-switches",
 					"--indent-preproc-block",
