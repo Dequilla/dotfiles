@@ -7,7 +7,7 @@ return {
 		"folke/snacks.nvim",
 	},
 	config = function()
-		nmap("<F2>", ":Neotree toggle<cr>")
+		nmap("<F2>", ":Neotree toggle float<cr>")
 		nmap("<F3>", ":Neotree toggle git_status float<cr>")
 	end,
 }
