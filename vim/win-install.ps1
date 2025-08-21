@@ -13,4 +13,4 @@ $install_path = "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_D
 xcopy /s .\nvim\ "$install_path"
 
 # Install Astyle
-# Start-Process powershell -Verb RunAs -ArgumentList "-Command cd '$PWD'; .\Windows\AStyle-Install.ps1"
+Start-Process powershell -Verb RunAs -ArgumentList "-Command cd '$PWD'; .\Windows\AStyle-Install.ps1"
