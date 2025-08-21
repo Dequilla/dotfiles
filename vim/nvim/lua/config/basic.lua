@@ -71,10 +71,6 @@ vim.opt.encoding = "utf-8"
 -- Theme
 vim.g.airline_theme = "alduin"
 
--- Nerdtree
-nmap("<F2>", ":NERDTreeToggle<cr>")
-vim.cmd("let NERDTreeShowHidden = 1") -- Show hidden files
-
 -- Split
 nmap("sv", ":vsplit<cr>")
 nmap("sh", ":split<cr>")
