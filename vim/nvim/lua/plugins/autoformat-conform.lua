@@ -31,25 +31,25 @@ return { -- Autoformat
 			}
 		end,
 		formatters = {
-			astyle = {
-				prepend_args = {
-					"--style=allman",
-					"--indent=force-tab",
-					"--break-closing-braces",
-					"--pad-comma",
-					"--indent-switches",
-					"--indent-preproc-block",
-					"--indent-preproc-define",
-					"--pad-fcc",
-					"--mode=c",
-				},
-				inherit = true,
-				command = "AStyle31.exe",
-			},
+			-- astyle = {
+			-- 	prepend_args = {
+			-- 		"--style=allman",
+			-- 		"--indent=force-tab",
+			-- 		"--break-closing-braces",
+			-- 		"--pad-comma",
+			-- 		"--indent-switches",
+			-- 		"--indent-preproc-block",
+			-- 		"--indent-preproc-define",
+			-- 		"--pad-fcc",
+			-- 		"--mode=c",
+			-- 	},
+			-- 	inherit = true,
+			-- 	command = "AStyle31.exe",
+			-- },
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
-			cpp = { "astyle" },
+			-- cpp = { "astyle" },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			--
