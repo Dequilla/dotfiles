@@ -64,5 +64,13 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 PowerShellGet\Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 
 ################
+# Ollama
+winget install -e --id=Ollama.Ollama
+if( winget list --exact wez.wezterm )
+{
+    ollama pull deepseek-r1:8b
+}
+
+################
 # Reload profile
 . "$profile_path"
