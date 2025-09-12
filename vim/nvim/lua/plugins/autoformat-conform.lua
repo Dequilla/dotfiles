@@ -31,6 +31,9 @@ return { -- Autoformat
 			}
 		end,
 		formatters = {
+			clangd = {
+				command = "clang-format",
+			},
 			-- astyle = {
 			-- 	prepend_args = {
 			-- 		"--style=allman",
@@ -49,6 +52,7 @@ return { -- Autoformat
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
+			cpp = { "clangd" },
 			-- cpp = { "astyle" },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
