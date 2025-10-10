@@ -25,7 +25,7 @@ vim.opt.expandtab = true
 
 -- Max width
 vim.opt.colorcolumn = "80"
-vim.opt.textwidth = 100
+-- vim.opt.textwidth = 100
 
 -- Better scrolling
 vim.opt.scrolloff = 10

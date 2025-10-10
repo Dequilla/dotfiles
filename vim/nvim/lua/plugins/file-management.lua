@@ -18,7 +18,7 @@ return {
 			},
 		})
 
-		nmap("<F2>", ":Neotree toggle float<cr>")
-		nmap("<F3>", ":Neotree toggle git_status float<cr>")
+		nmap("<F2>", ":Neotree toggle left<cr>")
+		nmap("<F3>", ":Neotree toggle git_status left<cr>")
 	end,
 }

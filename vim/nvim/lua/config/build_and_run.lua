@@ -32,11 +32,6 @@ else
 	vim.cmd(":command! Debug :!./build_and_run run debug")
 end
 
-nmap("<c-b><c-d>", ":BuildDeb<cr>")
-nmap("<c-b><c-r>", ":BuildRel<cr>")
-nmap("<c-r><c-r>", ":Run<cr>")
-nmap("<c-r><c-d>", ":Debug<cr>")
-
 -- TODO: Rewrite
 -- Generate build_and_run
 vim.cmd([[
