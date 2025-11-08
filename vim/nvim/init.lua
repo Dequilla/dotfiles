@@ -7,6 +7,9 @@ require("config.basic")
 -- Building and running
 require("config.build_and_run")
 
+-- Cheat sheet with info I use more often
+require("config.cheatsheet")
+
 -- Simple autocomplete
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest"
