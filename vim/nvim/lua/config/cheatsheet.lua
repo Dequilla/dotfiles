@@ -3,7 +3,8 @@ local function show_window()
 		"Neovim Cheatsheet",
 		"=================",
 		"Run command and put output in buffer, useful for build-commands to keep track of errors.",
-		":new | r ! <cmd>",
+		"Option 1 #> :term <cmd>",
+		"Option 2 #> :new | r ! <cmd>",
 	}
 
 	local buffer = vim.api.nvim_create_buf(false, true)
