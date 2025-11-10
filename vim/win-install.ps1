@@ -14,3 +14,8 @@ xcopy /s .\nvim\ "$install_path"
 
 # Install Astyle
 # Start-Process powershell -Verb RunAs -ArgumentList "-Command cd '$PWD'; .\Windows\AStyle-Install.ps1"
+
+
+# Lsp server for powershell
+# Start-Process powershell -ArgumentList "-Command cd '$PWD'; .\Windows\InstallPowerShellLSP.ps1"
+Invoke-Expression -Command $PSScriptRoot\Windows\InstallPowerShellLSP.ps1
