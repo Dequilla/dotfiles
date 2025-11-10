@@ -1,0 +1,25 @@
+*msbuild-command.txt* Msbuild command in NeoVim
+
+==============================================================================
+Msbuild command for NeoVim                            *msbuild-command-header*
+
+A thin wrapper for Msbuild.
+
+==============================================================================
+
+Msbuild wrapper                                        *|:Msbuild|msbuild|*
+
+:Msbuild [options] <project>
+    A thin wrapper command to invoke the MSBuild.exe on windows.
+
+USAGE:
+    :Msbuild -d -m 12 -t Clean,Build ./build/
+    :Msbuild -r -m -t Clean,Build ./build/Project.sln
+
+OPTIONS:
+    -d          Build debug
+    -r          Build release
+    -t          Build specific targets (same as msbuild, comma seperated)
+    -m <count>  Use <count> threads, omit <count> for all
+
+vim: ts=8 sw=4 tw=78 et

@@ -10,6 +10,19 @@ require("config.build_and_run")
 -- Cheat sheet with info I use more often
 require("config.cheatsheet")
 
+-- MSBuild
+require("config.MSBuild")
+
+-- Add personal help-documents
+vim.api.nvim_create_augroup("MyHelpTags", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+	group = "MyHelpTags",
+	-- Pattern to match any file in your config's doc/ directory
+	pattern = vim.fn.stdpath("config") .. "/doc/*.txt",
+	-- Command to run
+	command = "helptags " .. vim.fn.stdpath("config") .. "/doc",
+})
+
 -- Simple autocomplete
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest"

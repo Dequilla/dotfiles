@@ -11,3 +11,6 @@ xcopy /s .\nvim\ "$install_path"
 # Lsp server for powershell
 # Start-Process powershell -ArgumentList "-Command cd '$PWD'; .\Windows\InstallPowerShellLSP.ps1"
 Invoke-Expression -Command $PSScriptRoot\Windows\InstallPowerShellLSP.ps1
+
+# Update helppages tags
+nvim --headless -c "lua vim.cmd('helptags ' .. vim.fn.stdpath('config') .. '/doc')" -c "qa"

@@ -5,6 +5,10 @@ local function show_window()
 		"Run command and put output in buffer, useful for build-commands to keep track of errors.",
 		"Option 1 #> :term <cmd>",
 		"Option 2 #> :new | r ! <cmd>",
+		" ",
+		"Run MSBuild command through thin wrapper, :h msbuild",
+		"Example: :Msbuild -d -t Clean,Build ./build/",
+		"This opens in a new term-buffer (removing old one if one exists)",
 	}
 
 	local buffer = vim.api.nvim_create_buf(false, true)
