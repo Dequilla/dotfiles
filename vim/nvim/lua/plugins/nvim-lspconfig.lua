@@ -185,7 +185,10 @@ return {
 					"--log=verbose",
 				},
 			},
-			-- pyright = {},
+			basedpyright = {},
+			powershell_es = {
+				bundle_path = "C:/develop/PowerShellEditorServices",
+			},
 			rust_analyzer = {
 				["rust-analyzer"] = {
 					settings = {

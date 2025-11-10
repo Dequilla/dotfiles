@@ -7,8 +7,7 @@ vim.g.mapleader = ","
 -- Add pairs for %
 vim.opt.mps:append("<:>")
 
--- Detect filetypes
-vim.cmd(":filetype on")
+-- Detect filetypes vim.cmd(":filetype on")
 vim.cmd(":filetype plugin on")
 vim.cmd(":filetype indent on")
 
