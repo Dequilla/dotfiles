@@ -5,6 +5,6 @@ return {
 		"vim-airline/vim-airline-themes",
 	},
 	config = function()
-		vim.g.airline_theme = "alduin"
+		vim.g.airline_theme = "everforest"
 	end,
 }
