@@ -5,6 +5,7 @@
 $install_path = "$env:LOCALAPPDATA"
 $install_folder = "config"
 $full_install_path = "$install_path\$install_folder"
+$custom_script_folder = "CustomScripts"
 
 ##################################
 # Compiler db generator for Clangd
@@ -39,8 +40,7 @@ if( winget list --exact wez.wezterm )
 {
     echo "WezTerm is already installed, updating..."
     winget upgrade wez.wezterm
-}
-else
+} else
 {
     echo "WezTerm needs to be installed, installing..."
     winget install wez.wezterm
@@ -65,11 +65,17 @@ PowerShellGet\Install-Module -Name Terminal-Icons -Repository PSGallery -Scope C
 
 ################
 # Ollama
-winget install -e --id=Ollama.Ollama
-if( winget list --exact wez.wezterm )
-{
-    ollama pull deepseek-r1:8b
-}
+# winget install -e --id=Ollama.Ollama
+# if( winget list --exact wez.wezterm )
+# {
+#     ollama pull deepseek-r1:8b
+# }
+
+########################
+# Install custom scripts
+$custom_script_full_path="$full_install_path\$custom_script_folder"
+New-Item -ItemType Directory -Path "$custom_script_full_path" 
+Copy-Item -Path "$PSScriptRoot\Scripts\*" -Recurse -Destination "$custom_script_full_path" -Force
 
 ################
 # Reload profile

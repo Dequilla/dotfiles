@@ -70,6 +70,16 @@ Import-Module -Name Terminal-Icons
 $env:Path += ";C:\Users\user\AppData\Local\Programs\oh-my-posh\bin"
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/stelbent-compact.minimal.omp.json" | Invoke-Expression
 
+#########################
+# Custom scripts
+$custom_script_path = "$env:LOCALAPPDATA\config\CustomScripts"
+function ResetIconCache()
+{
+    # Stops explorer, deletes "iconcache*.db" files and starts explorer again
+    Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File $custom_script_path\ResetIconCache.ps1" -Verb RunAs
+}
+Set-Alias -Name resicon -Value ResetIconCache
+
 #############################
 # Python
 New-Alias python py
