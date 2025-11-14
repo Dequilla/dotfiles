@@ -185,7 +185,6 @@ return {
 					"--log=verbose",
 				},
 			},
-			basedpyright = {},
 			powershell_es = {
 				bundle_path = "C:/develop/PowerShellEditorServices",
 			},

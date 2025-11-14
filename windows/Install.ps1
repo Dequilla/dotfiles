@@ -71,6 +71,17 @@ PowerShellGet\Install-Module -Name Terminal-Icons -Repository PSGallery -Scope C
 #     ollama pull deepseek-r1:8b
 # }
 
+# Install jira-cli
+$install_jira_cli = Read-Host -Prompt "Do you want to install Jira-cli? y/Y"
+if( $install_jira_cli -eq "y" )
+{
+    Invoke-Expression -Command $PSScriptRoot\InstallJiraCli.ps1
+    Write-Output "NOTE: Do not forget env-variables for integrations: {JIRA_DOMAIN, JIRA_USER, JIRA_API_TOKEN}"
+} else
+{
+    Write-Output "Jira-cli ignored..."
+}
+
 ########################
 # Install custom scripts
 $custom_script_full_path="$full_install_path\$custom_script_folder"

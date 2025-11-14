@@ -57,20 +57,7 @@ function Gen-Compiler-Db($solutiondir)
 }
 Set-Alias -Name gencdb -Value Gen-Compiler-Db
 
-########################################
-# Better tab completion (more unix-like)
-Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-#####################
-# Terminal Icons
-Import-Module -Name Terminal-Icons
-
-#############################
-# Oh-my-posh (has to be last)
-$env:Path += ";C:\Users\user\AppData\Local\Programs\oh-my-posh\bin"
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/stelbent-compact.minimal.omp.json" | Invoke-Expression
-
-#########################
+################
 # Custom scripts
 $custom_script_path = "$env:LOCALAPPDATA\config\CustomScripts"
 function ResetIconCache()
@@ -80,6 +67,26 @@ function ResetIconCache()
 }
 Set-Alias -Name resicon -Value ResetIconCache
 
+##########
+# Jira-cli
+$jira_cli_path = "C:\develop\jira-cli"
+if( Test-Path -Path "$jira_cli_path" )
+{
+    if($env:PATH -notlike "*$jira_cli_path*")
+    {
+        $env:PATH += ";$jira_cli_path/bin"
+    }
+}
+
+########################################
+# Better tab completion (more unix-like)
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+################
+# Terminal Icons
+Import-Module -Name Terminal-Icons
+
 #############################
-# Python
-New-Alias python py
+# Oh-my-posh (has to be last)
+$env:Path += ";C:\Users\user\AppData\Local\Programs\oh-my-posh\bin"
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/stelbent-compact.minimal.omp.json" | Invoke-Expression
