@@ -88,6 +88,22 @@ nmap("<a-l>", "2<c-w>>")
 nmap("<a-j>", "2<c-w>+")
 nmap("<a-k>", "2<c-w>-")
 
+-- Spelling help
+local function toggle_spell()
+	local is_spell_on = vim.opt_local.spell:get()
+
+	if is_spell_on then
+		vim.opt_local.spell = false
+		vim.notify("Spellcheck OFF", vim.log.levels.INFO, { title = "Neovim Config" })
+	else
+		vim.opt_local.spell = true
+		vim.notify("Spellcheck ON", vim.log.levels.INFO, { title = "Neovim Config" })
+	end
+end
+vim.api.nvim_create_user_command("SpellCheck", toggle_spell, {})
+nmap("sc", "<cmd>SpellCheck<CR>")
+vim.cmd(":setlocal spelllang=en_us")
+
 -- Add shortcut for terminal
 if vim.fn.has("win32") == 1 then
 	-- For bang commands, CMD is used and for :ter we use powershell 7
