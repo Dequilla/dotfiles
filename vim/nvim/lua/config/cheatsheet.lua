@@ -1,14 +1,24 @@
 local function show_window()
 	local test = {
-		"Neovim Cheatsheet",
-		"=================",
-		"Run command and put output in buffer, useful for build-commands to keep track of errors.",
-		"Option 1 #> :term <cmd>",
-		"Option 2 #> :new | r ! <cmd>",
+		"# Neovim Cheatsheet",
 		" ",
-		"Run MSBuild command through thin wrapper, :h msbuild",
-		"Example: :Msbuild -d -t Clean,Build ./build/",
+		"## --- Run Commands ---",
+		"Run command and put output in buffer, useful for build-commands to keep track of errors.",
+		"Option 1 #> `:term <cmd>`",
+		"Option 2 #> `:new | r ! <cmd>`",
+		" ",
+		"## --- MSBuild ---",
+		"Run MSBuild command through thin wrapper, `:h msbuild`",
+		"Example: `:Msbuild -d -t Clean,Build ./build/`",
 		"This opens in a new term-buffer (removing old one if one exists)",
+		"TIP: In the terminal buffer that pops up, `gf` goes to file at path, and `gF` also considers the line if one is present",
+		" ",
+		"## --- Spell checking ---",
+		"This config has a helper method to toggle spellcheck, run one of the following:",
+		"`:SpellCheck` or press `sc`",
+		"Change language via: `:setlocal spelllang=en_us`",
+		"Jump to prev/next wrong: `[s` / `]s` \t Add good word: `zg` \t Add bad word: `zw` \t Ask suggestions: `z=`",
+		"More info: `:h spell`",
 	}
 
 	local buffer = vim.api.nvim_create_buf(false, true)
