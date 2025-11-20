@@ -3,7 +3,7 @@ local function show_window()
 		"# Neovim Cheatsheet",
 		" ",
 		"## --- Run Commands ---",
-		"Run command and put output in buffer, useful for build-commands to keep track of errors.",
+		"Run command and put output in buffer, useful for build-commands to keep errors open in persistent buffer.",
 		"Option 1 #> `:term <cmd>`",
 		"Option 2 #> `:new | r ! <cmd>`",
 		" ",
@@ -19,6 +19,11 @@ local function show_window()
 		"Change language via: `:setlocal spelllang=en_us`",
 		"Jump to prev/next wrong: `[s` / `]s` \t Add good word: `zg` \t Add bad word: `zw` \t Ask suggestions: `z=`",
 		"More info: `:h spell`",
+		" ",
+		"## --- Surround ---",
+		"This config uses mini.surround to enable easy to use surround commands.",
+		"`sa[character]` to add surround \t `sr[replace][new]` to replace surrounding",
+		"More info: `:h surround`",
 	}
 
 	local buffer = vim.api.nvim_create_buf(false, true)
