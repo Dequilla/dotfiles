@@ -24,6 +24,14 @@ local function show_window()
 		"This config uses mini.surround to enable easy to use surround commands.",
 		"`sa[character]` to add surround \t `sr[replace][new]` to replace surrounding",
 		"More info: `:h surround`",
+		" ",
+		"## --- Command History ---",
+		"When running a command through `:` pressing `<c-f>` opens a history buffer with ran commands where you can run commands.",
+		"The absolute largest benefit of this buffer is that you can write commands and use all our vim keymaps, such as multiple cursors.",
+		"## --- Replacing --- ",
+		"1. Select some text (<c-q> or <visual mode>)",
+		'2. Yank (Places in register ", default register)',
+		'3. Write replace command: `:\'<,\'>s/Ctrl-R "/replacement/g` (<c-r>" selects register ")',
 	}
 
 	local buffer = vim.api.nvim_create_buf(false, true)

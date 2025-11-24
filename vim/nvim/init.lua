@@ -43,15 +43,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 -- Undotree
 nmap("<F5>", ":UndotreeToggle<CR>")
 
--- Fzf
-vim.cmd([[
-    let g:fzf_vim = {}
-    let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
-]])
-
--- Fuzzy search
-nmap("<c-f>", ":Ag<Space>")
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
