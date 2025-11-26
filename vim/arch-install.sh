@@ -3,7 +3,7 @@
 CONF_HOME=~/.config
 
 # Prerequesits
-sudo pacman -S bat the_silver_searcher ripgrep
+sudo pacman -S bat the_silver_searcher fd
 
 # TODO: (switch to nightly) Ensure vim is installed
 sudo pacman -S neovim

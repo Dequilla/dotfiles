@@ -3,6 +3,9 @@
 # Allow syntax highlighting in searches for fzf (syntax highlighting overall?)
 # winget install sharkdp.bat
 
+# Install FD for telescope.builtin.find_files
+winget install sharkdp.fd
+
 $install_path = "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])\nvim\"
 
 # Copy config to correct location

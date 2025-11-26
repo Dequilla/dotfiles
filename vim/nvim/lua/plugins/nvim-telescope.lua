@@ -80,8 +80,10 @@ return {
 
 		vim.keymap.set("n", "<leader>sf", function()
 			require("telescope.builtin").find_files({
-				no_ignore = true,
-				no_ignore_parent = true,
+				find_command = { "fd" },
+				no_ignore = false,
+				no_ignore_parent = false,
+				hidden = false,
 			})
 		end, { desc = "[S]earch [F]iles" })
 
