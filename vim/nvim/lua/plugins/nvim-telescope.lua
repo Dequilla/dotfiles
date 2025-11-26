@@ -55,6 +55,12 @@ return {
 			--   },
 			-- },
 			-- pickers = {}
+			defaults = {
+				-- Shorten folders, except the last three
+				path_display = { truncate = 1, shorten = { len = 6, exclude = { -1, -2, -3 } } },
+				dynamic_preview_title = true,
+				wrap_results = true,
+			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
