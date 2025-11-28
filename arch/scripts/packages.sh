@@ -18,4 +18,7 @@ packages+=(noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra)
 # Utilities
 packages+=(tree neovim brightnessctl yazi grim slurp keepassxc)
 
+# Building stuff
+packages+=(rustup)
+
 sudo pacman -S ${packages[@]}
