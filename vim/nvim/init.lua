@@ -11,7 +11,7 @@ require("config.build_and_run")
 require("config.cheatsheet")
 
 -- MSBuild
-require("config.MSBuild")
+require("config.msbuild")
 
 -- Add personal help-documents
 vim.api.nvim_create_augroup("MyHelpTags", { clear = true })
